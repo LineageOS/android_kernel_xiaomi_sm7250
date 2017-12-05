@@ -73,6 +73,9 @@ static DEFINE_MUTEX(msm_release_lock);
 atomic_t resume_pending;
 wait_queue_head_t resume_wait_q;
 
+#define IDLE_ENCODER_MASK_DEFAULT	1
+#define IDLE_TIMEOUT_MS_DEFAULT		100
+
 static void msm_fb_output_poll_changed(struct drm_device *dev)
 {
 	struct msm_drm_private *priv = NULL;
