@@ -3,16 +3,8 @@
 #
 
 config RMNET_SHS
-<<<<<<< HEAD
 	tristate "Rmnet SHS driver"
-	default m
+	default y
 	depends on RMNET
 	---help---
 	  performance mode of rmnet driver
-=======
-    tristate "Rmnet SHS driver"
-    default y
-#    depends on RMNET
-    ---help---
-        performance mode of rmnet driver
->>>>>>> 6d34c35f793d (techpack: data: rmnet_perf/rmnet_shs: default =y)
