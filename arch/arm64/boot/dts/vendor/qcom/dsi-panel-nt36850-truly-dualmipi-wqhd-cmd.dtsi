@@ -19,6 +19,11 @@
 		qcom,mdss-dsi-h-right-border = <0>;
 		qcom,mdss-dsi-v-top-border = <0>;
 		qcom,mdss-dsi-v-bottom-border = <0>;
+
+		qcom,dsi-ctrl-num = <0 1>;
+		qcom,dsi-phy-num = <0 1>;
+		qcom,dsi-select-clocks = "src_byte_clk0", "src_pixel_clk0";
+
 		qcom,mdss-dsi-bpp = <24>;
 		qcom,mdss-dsi-color-order = "rgb_swap_rgb";
 		qcom,mdss-dsi-underflow-color = <0xff>;
@@ -373,6 +378,7 @@
 		qcom,mdss-dsi-on-command-state = "dsi_lp_mode";
 		qcom,mdss-dsi-off-command-state = "dsi_hs_mode";
 		qcom,mdss-dsi-h-sync-pulse = <0>;
+
 		qcom,mdss-dsi-traffic-mode = "non_burst_sync_event";
 		qcom,mdss-dsi-lane-map = "lane_map_0123";
 		qcom,mdss-dsi-bllp-eof-power-mode;
@@ -399,6 +405,45 @@
 		qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_wled";
 		qcom,mdss-dsi-bl-min-level = <1>;
 		qcom,mdss-dsi-bl-max-level = <4095>;
-		qcom,mdss-dsi-reset-sequence = <1 10>, <0 10>, <1 10>;
+		qcom,mdss-dsi-reset-sequence = <1 10>, <0 10>, <1 50>;
+		qcom,mdss-dsi-display-timings {
+			timing@0 {
+				qcom,mdss-dsi-panel-framerate = <60>;
+				qcom,mdss-dsi-panel-width = <720>;
+				qcom,mdss-dsi-panel-height = <2560>;
+				qcom,mdss-dsi-h-front-porch = <120>;
+				qcom,mdss-dsi-h-back-porch = <140>;
+				qcom,mdss-dsi-h-pulse-width = <20>;
+				qcom,mdss-dsi-h-sync-skew = <0>;
+				qcom,mdss-dsi-v-back-porch = <20>;
+				qcom,mdss-dsi-v-front-porch = <8>;
+				qcom,mdss-dsi-v-pulse-width = <4>;
+				qcom,mdss-dsi-h-left-border = <0>;
+				qcom,mdss-dsi-h-right-border = <0>;
+				qcom,mdss-dsi-v-top-border = <0>;
+				qcom,mdss-dsi-v-bottom-border = <0>;
+				qcom,mdss-dsi-on-command = [
+					15 01 00 00 00 00 02 ff 10
+					15 01 00 00 00 00 02 fb 01
+					15 01 00 00 00 00 02 36 00
+					15 01 00 00 00 00 02 35 00
+					39 01 00 00 00 00 03 44 03 e8
+					15 01 00 00 00 00 02 51 ff
+					15 01 00 00 00 00 02 53 2c
+					15 01 00 00 00 00 02 55 01
+					05 01 00 00 0a 00 02 20 00
+					15 01 00 00 00 00 02 bb 10
+					05 01 00 00 78 00 02 11 00
+					05 01 00 00 78 00 02 29 00
+				];
+				qcom,mdss-dsi-off-command = [
+					05 01 00 00 78 00 02 28 00
+					05 01 00 00 78 00 02 10 00
+				];
+				qcom,mdss-dsi-on-command-state = "dsi_lp_mode";
+				qcom,mdss-dsi-off-command-state = "dsi_hs_mode";
+				qcom,mdss-dsi-h-sync-pulse = <0>;
+			};
+		};
 	};
 };
