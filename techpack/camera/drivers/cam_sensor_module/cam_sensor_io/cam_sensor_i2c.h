@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: GPL-2.0-only */
 /*
  * Copyright (c) 2017-2019, The Linux Foundation. All rights reserved.
- * Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (C) 2021 XiaoMi, Inc.
  */
 
 #ifndef _CAM_SENSOR_I2C_H_
@@ -10,7 +10,7 @@
 #include <linux/delay.h>
 #include <media/v4l2-subdev.h>
 #include <media/cam_sensor.h>
-#include "cam_cci_dev.h"
+#include "../cam_cci/cam_cci_dev.h"
 #include "cam_sensor_io.h"
 
 #define I2C_POLL_TIME_MS 5
@@ -58,8 +58,7 @@ int32_t cam_camera_cci_i2c_read_seq(struct cam_sensor_cci_client *client,
  */
 int32_t cam_cci_i2c_write_table(
 	struct camera_io_master *client,
-	struct cam_sensor_i2c_reg_setting *write_setting,
-	bool force_low_priority);
+	struct cam_sensor_i2c_reg_setting *write_setting);
 
 /**
  * @client: CCI client structure
@@ -71,8 +70,7 @@ int32_t cam_cci_i2c_write_table(
 int32_t cam_cci_i2c_write_continuous_table(
 	struct camera_io_master *client,
 	struct cam_sensor_i2c_reg_setting *write_setting,
-	uint8_t cam_sensor_i2c_write_flag,
-	bool force_low_priority);
+	uint8_t cam_sensor_i2c_write_flag);
 
 /**
  * @cci_client: CCI client structure
@@ -95,7 +93,7 @@ int32_t cam_sensor_cci_i2c_util(struct cam_sensor_cci_client *cci_client,
  * This API implements CCI based I2C poll
  */
 int32_t cam_cci_i2c_poll(struct cam_sensor_cci_client *client,
-	uint32_t addr, uint16_t data, uint16_t data_mask,
+	uint32_t addr, uint32_t data, uint32_t data_mask,
 	enum camera_sensor_i2c_type data_type,
 	enum camera_sensor_i2c_type addr_type,
 	uint32_t delay_ms);
