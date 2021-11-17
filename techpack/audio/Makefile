@@ -23,6 +23,9 @@ ifeq ($(CONFIG_ARCH_BENGAL), y)
 include $(srctree)/techpack/audio/config/bengalauto.conf
 export $(shell sed 's/=.*//' $(srctree)/techpack/audio/config/bengalauto.conf)
 endif
+ifeq ($(CONFIG_ARCH_LITO), y)
+include $(srctree)/techpack/audio/config/litoauto.conf
+endif
 ifeq ($(CONFIG_ARCH_SDM660), y)
 include $(srctree)/techpack/audio/config/sdm660auto.conf
 export $(shell sed 's/=.*//' $(srctree)/techpack/audio/config/sdm660auto.conf)
