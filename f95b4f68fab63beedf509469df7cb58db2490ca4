@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a821f06_68ff5f11",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21290
+      },
+      "writtenOn": "2021-12-19T15:48:11Z",
+      "side": 1,
+      "message": "Asking that again, this looks really bad. Why don\u0027t you just apply I32fc08c9ad36b9c8ebfc019fc87a19eece18f0b4? The mentioned commit sets the restart level to related instead of forcing that in kernel (which would probably just make sense for custom kernels supposed to be used with stock ROMs). In the original commit message of this change it said OnePlus uses that hack, was this just replaced with xiaomi? I don\u0027t see how this should be needed on a custom vendor build...",
+      "revId": "f95b4f68fab63beedf509469df7cb58db2490ca4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
